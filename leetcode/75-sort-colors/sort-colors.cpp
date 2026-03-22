@@ -1,15 +1,21 @@
 class Solution {
 public:
-    void sortColors(vector<int>& nums) {
-        int n = nums.size();
-        for (int i=1; i<n ; i++){
-            int curr = nums[i];
-            int prev = i-1;
-            while(prev>= 0 && nums[prev] > curr){
-                nums[prev+1] = nums[prev];
-                prev--;
+//dutch national flag algorithm
+    void sortColors(vector<int>& a) {
+        int n = a.size();
+        int mid=0, low=0, high=(n-1);
+        while(mid<=high){
+            if (a[mid]==2){
+                swap(a[mid],a[high]);
+                high--;
             }
-            nums[prev+1] = curr;
+            else if (a[mid]==0){
+                swap(a[mid],a[low]);
+                low++;
+                mid++;
+            }
+            else mid++;
         }
+
     }
-};auto init=atexit([]{ofstream("display_runtime.txt")<<"0";});
+};
