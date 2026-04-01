@@ -3,7 +3,6 @@ public:
     bool isfreqsame( vector <int> freq1, vector<int> freq2){
         for (int k = 0 ; k <26; k++ ){
             if (freq1[k]!=freq2[k]) return false;
-            cout << freq1[k] << " " << freq2[k] << endl;
         }
         return true;
     }
@@ -23,4 +22,4 @@ public:
         } 
         return false;
     }
-};auto init=atexit([]{ofstream("display_runtime.txt")<<"0";});
+};//auto init=atexit([]{ofstream("display_runtime.txt")<<"0";});
